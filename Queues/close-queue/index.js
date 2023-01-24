@@ -1,5 +1,13 @@
 const fs = require('fs');
 
-const readableStrea
+const readableStream = fs.createReadStream(__filename);
+readableStream.close();
 
-https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810
+readableStream.on("close", () => {
+    console.log("this is from readablelStream close event callback")
+})
+
+setImmediate(() => console.log("this is setImmediate 1"))
+setTimeout(() => console.log("this is setTimout 1"), 0)
+Promise.resolve().then(() => console.log("this is Promise.resolce 1"));
+process.nextTick(() => console.log("this is process.nextTick 1"))

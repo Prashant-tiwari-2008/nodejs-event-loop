@@ -18,4 +18,4 @@ for (let i = 0; i < Max_Calls; i++) {
     });
 }
 
-//Note:- A few asyn methods like fs.readFile and crypt.pbkdf2 run on a separate thread in libuv's thread pool. They do run synchronously in their own thread but as far as the main thread is concerned, it appears as if the method is running asyn.
+//Note:- A few asyn methods like fs.readFile and crypt.pbkdf2 run on a separate thread in libuv's thread pool. They do run synchronously in their own thread but as far as the main thread is concerned, it appears as if the method is running asyn.s
